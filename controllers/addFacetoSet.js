@@ -16,7 +16,7 @@ var options =(face_id,outer_id)=> ({
 
 async function addFacetoSet(face_id,outer_id){
     const req = await rp.post(API_URL,options(face_id,outer_id))
-    console.log(req)
+    // console.log(req)
 }
 
 module.exports = addFacetoSet

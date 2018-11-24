@@ -18,9 +18,13 @@ var options = (name,id,tags) => ({
     json: true // Automatically stringifies the body to JSON
 });
 
-async function createFaceSet(name,id,tags){
-    const req = await rp.post(API_URL,options(name,id,tags))
-    console.log(req)
+async function createFaceSet(req,res){
+    const {name,id,tags} = req.body 
+    rp.post(API_URL,options(name,id,tags),(error,data)=>{
+        if(error) return res.status(400).send(error)
+        // console.log(data.body)
+        return res.json(data.body)
+    })
 }
 
 module.exports = createFaceSet

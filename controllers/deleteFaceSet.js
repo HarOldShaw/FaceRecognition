@@ -9,14 +9,18 @@ var options =(id)=> ({
         api_key: API_KEY,
         api_secret: API_SECRET,
         outer_id: id,
-        check_empty: 1,
+        check_empty: 0,
     },
     json: true // Automatically stringifies the body to JSON
 });
 
-async function deleteFaceSet(id){
-    const req = await rp.post(API_URL,options(id))
-    console.log(req)
+async function deleteFaceSet(req,res){
+    const {outer_id} = req.body
+    await rp.post(API_URL,options(outer_id),(error,data)=>{
+        if(error) return res.status(400).send(error)
+        console.log(data)
+        return res.json(data)
+    })
 }
 
 module.exports = deleteFaceSet
