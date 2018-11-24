@@ -24,14 +24,24 @@ async function addUser(req,res){
 }
 
 
+// async function getUser(req,res){
+//     const {name} = req.body
+//     User.find({name},(error,data)=>{
+//         if(error) return res.status(400).send(error)
+//         console.log("userget:",data)
+//         return res.json({message: "user get:",data}) 
+//     })
+// }
+
 async function getUser(req,res){
-    const {name} = req.body
-    User.find({name},(error,data)=>{
+    const {faceImagePath} = req.body
+    User.find({faceImagePath},(error,data)=>{
         if(error) return res.status(400).send(error)
         console.log("userget:",data)
-        return res.json({message: "user get:",data}) 
+        return res.json(data[0]) 
     })
 }
+
 
 async function removeUser(req,res){
     const {_id} = req.body
