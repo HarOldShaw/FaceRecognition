@@ -1,0 +1,22 @@
+{
+  "name": "facerecognition",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harold",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "form-data": "^2.3.3",
+    "mongoose": "^5.3.13",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.6",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
