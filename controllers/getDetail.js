@@ -16,7 +16,6 @@ var options =(id) =>({
 async function getDetail(req,res){
     const {outer_id} = req.body
     rp.post(API_URL,options(outer_id),(error,data)=>{
-        console.log("here")
         if(error) return res.status(400).send(error)
         console.log(data.body)
         return res.json({message: "faceset get:","body":data.body}) 

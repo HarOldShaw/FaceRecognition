@@ -9,6 +9,7 @@ router.post("/addUser", addUser)
 router.post("/getUser", getUser)
 router.post("/removeUser", removeUser)
 router.post("/getDetail",getDetail)
+router.post("/searchFace",searchFace)
 
 
 
